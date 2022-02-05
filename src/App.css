@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.CodeMirror-scroll,
+.CodeMirror-gutters {
+  background: #1d1e22 !important;
+}
+.CodeMirror {
+  height: 340px !important;
+  color: #fff;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CloseFullscreenIcon from "@mui/icons-material/CloseFullscreen";
@@ -9,6 +10,7 @@ import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 
+import "../App.css";
 const Heading = styled(Box)`
   background: #1d1e22;
   display: flex;
@@ -32,11 +34,12 @@ const Container = styled(Box)`
 `;
 
 function Editor({ heading, icon, color, language, value, onChange }) {
+  const [open, setOpen] = useState(true);
   const handleChange = (editor, data, value) => {
     onChange(value);
   };
   return (
-    <Container>
+    <Container style={open ? null : { flexGrow: 0 }}>
       <Header>
         <Heading>
           <Box
@@ -57,7 +60,11 @@ function Editor({ heading, icon, color, language, value, onChange }) {
           </Box>
           {heading}
         </Heading>
-        <CloseFullscreenIcon fontSize="small" style={{ alignSelf: "center" }} />
+        <CloseFullscreenIcon
+          fontSize="small"
+          style={{ alignSelf: "center" }}
+          onClick={() => setOpen((prevState) => !prevState)}
+        />
       </Header>
       <ControlledEditor
         value={value}
