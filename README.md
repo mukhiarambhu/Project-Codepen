@@ -1,3 +1,8 @@
+# About Project
+This project is clone of codepen . where we can write seperate html,css and js and get output at instance.
+# Screenshot
+[![Capture.jpg](https://i.postimg.cc/159Sn76m/Capture.jpg)](https://postimg.cc/6T1gF0Yg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
